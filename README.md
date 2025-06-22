@@ -1,6 +1,6 @@
 # Backend API
 
-This repository contains a FastAPI backend application for BP&Co services.
+This repository contains a FastAPI backend application for Git Commit History Visualization.
 
 ## Running the Application
 
@@ -67,7 +67,7 @@ python3.11 -m venv .venv
 Activate it (bash/zsh)
 
 ```bash
-source venv/bin/activate
+source .venv/bin/activate
 ```
 
 Install requirements

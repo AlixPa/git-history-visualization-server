@@ -31,7 +31,6 @@ services:
     environment:
       MYSQL_HOST: mysql
       MYSQL_PORT: 3306
-      UVICORN_MODE_DEBUG: False
     depends_on:
       - migrator
     ports:
@@ -43,7 +42,7 @@ services:
         "-k",
         "uvicorn.workers.UvicornWorker",
         "--workers",
-        "4",
+        "1",
         "--bind",
         "0.0.0.0:${APP_PORT}",
       ]
