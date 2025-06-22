@@ -1,8 +1,58 @@
 # Backend API
 
-This repository contains a FastAPI backend application for BP&Co services.
+This repository contains a FastAPI backend application for Git Commit History Visualization.
 
-## Prerequisites
+## Running the Application
+
+Before running the application, you need to have Docker Desktop installed:
+
+1. Download Docker Desktop from [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
+2. Install Docker Desktop following the installation instructions for your operating system
+3. Start Docker Desktop and ensure it's running
+
+---
+
+Copy paste `.env-example` to `.env` and fill it with your own environment requirements.
+
+---
+
+Then optionaly initialize the database with mock data running the following command:
+
+```bash
+/bin/bash shell/reset-db.sh
+```
+
+---
+
+Then to run the application, use the following command:
+
+```bash
+docker-compose up -d app
+```
+
+---
+
+To stop the application, use the following command:
+
+```bash
+docker-compose down
+```
+
+---
+
+The API will be available at:
+
+- API: http://localhost:${APP_PORT}
+- API Documentation: http://localhost:${APP_PORT}/docs
+- Alternative API Documentation: http://localhost:${APP_PORT}/redoc
+
+---
+
+To connect with the frontend, checkout this repository and follow the instructions:
+
+https://github.com/AlixPa/git-history-visualization-web
+
+## Working on the repository
 
 ### Python environment
 
@@ -17,7 +67,7 @@ python3.11 -m venv .venv
 Activate it (bash/zsh)
 
 ```bash
-source venv/bin/activate
+source .venv/bin/activate
 ```
 
 Install requirements
@@ -44,43 +94,3 @@ pre-commit install
 ```
 
 And voilà. Now everytime you try to commit it will reformat the files if you are not respecting the formatting of blackformatter and isort. But as you have the extensions on, everything should be fine.
-
-### Docker
-
-Before running the application, you need to have Docker Desktop installed:
-
-1. Download Docker Desktop from [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
-2. Install Docker Desktop following the installation instructions for your operating system
-3. Start Docker Desktop and ensure it's running
-
----
-
-Copy paste `.env-example` to `.env` and fill it with your own environment requirements.
-
-## Reset the database
-
-To reset the database, use the following command:
-
-```bash
-/bin/bash bash/reset-db.sh
-```
-
-## Running the Application
-
-To run the application, use the following command:
-
-```bash
-docker-compose up -d
-```
-
-To stop the application, use the following command:
-
-```bash
-docker-compose down
-```
-
-The API will be available at:
-
-- API: http://localhost:${APP_PORT}
-- API Documentation: http://localhost:${APP_PORT}/docs
-- Alternative API Documentation: http://localhost:${APP_PORT}/redoc

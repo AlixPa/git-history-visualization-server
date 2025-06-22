@@ -21,7 +21,7 @@ ENV PYTHONPATH=src
 COPY ./alembic.ini alembic.ini
 
 # entrypoint for migration docker
-COPY ./docker/migrate-db.sh docker/migrate-db.sh
+COPY ./shell/migrate-db.sh shell/migrate-db.sh
 
 
 # Default command just sleeps (we override it in entrypoint)
