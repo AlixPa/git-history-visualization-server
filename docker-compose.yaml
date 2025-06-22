@@ -22,7 +22,7 @@ services:
       MYSQL_PORT: 3306
     depends_on:
       - mysql
-    entrypoint: ["/bin/bash", "/app/docker/migrate-db.sh"]
+    entrypoint: ["/bin/bash", "/app/shell/migrate-db.sh"]
 
   app:
     build:
